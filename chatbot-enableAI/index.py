@@ -16,10 +16,10 @@ class ChatBotGUI:
         self.is_dark_theme = IntVar()
         self.chat_display = scrolledtext.ScrolledText(self.master, wrap=tk.WORD, width=80, height=20, font=('Arial', 16))
         self.chat_display.pack(padx=20, pady=20)
-        self.user_img = Image.open("D:\\TRÍ TUỆ NHÂN TẠO\\chatbot-enableAI\\profile.png")
+        self.user_img = Image.open("D:\TRÍ TUỆ NHÂN TẠO\Chatbot_Ai\chatbot-enableAI\profile.png")
         self.user_img = self.user_img.resize((50, 50), resample=Image.LANCZOS)
         self.user_img = ImageTk.PhotoImage(self.user_img)
-        airplane_icon = Image.open("D:\\TRÍ TUỆ NHÂN TẠO\\chatbot-enableAI\\send.png")
+        airplane_icon = Image.open("D:\TRÍ TUỆ NHÂN TẠO\Chatbot_Ai\chatbot-enableAI\send.png")
         airplane_icon = airplane_icon.resize((20, 20), resample=Image.LANCZOS)
         self.airplane_img = ImageTk.PhotoImage(airplane_icon)
         self.user_input = tk.Entry(master, width=50, font=('Arial', 14))
@@ -37,9 +37,9 @@ class ChatBotGUI:
         self.display_message_with_typing_animation("Sam: Hi! I'm your ChatBot. How can I assist you today?", 'sam', align='left', color='#09795a')
 
     def load_model(self):
-        with open('D:\\TRÍ TUỆ NHÂN TẠO\\chatbot-enableAI\\chatbot-enableAI\\intents.json', 'r', encoding='utf-8') as f:
+        with open('D:\TRÍ TUỆ NHÂN TẠO\Chatbot_Ai\chatbot-enableAI\chatbot-enableAI\intents.json', 'r', encoding='utf-8') as f:
             self.intents = json.load(f)
-        data = torch.load("D:\\TRÍ TUỆ NHÂN TẠO\\chatbot-enableAI\\data.pth")
+        data = torch.load("D:\TRÍ TUỆ NHÂN TẠO\Chatbot_Ai\chatbot-enableAI\chatbot-enableAI\data.pth")
         self.model_state = data["model_state"]
         self.all_words = data["all_words"]
         self.tags = data["tags"]
